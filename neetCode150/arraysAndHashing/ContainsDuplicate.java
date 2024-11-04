@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class containsDuplicate {
+public class ContainsDuplicate {
     public boolean func(int[]a){
         Set<Integer> set = new HashSet<>();
         for(int i : a){
@@ -18,7 +18,7 @@ public class containsDuplicate {
 }
 class Main{
     public static void main(String[] args) {
-        containsDuplicate obj = new containsDuplicate();
+        ContainsDuplicate obj = new ContainsDuplicate();
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         for(int i=0;i<t;i++){
