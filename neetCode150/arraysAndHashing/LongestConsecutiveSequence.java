@@ -1,4 +1,4 @@
-package neetCode150;
+package neetCode150.arraysAndHashing;
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -25,7 +25,7 @@ public class LongestConsecutiveSequence {
 return longestStreak;
     }
 }
-class Main5{
+class Main6{
     public static void main(String[] args) {
         LongestConsecutiveSequence obj = new LongestConsecutiveSequence();
         Scanner sc = new Scanner(System.in);
