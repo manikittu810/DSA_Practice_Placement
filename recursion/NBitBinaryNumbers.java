@@ -13,19 +13,36 @@ public class NBitBinaryNumbers {
         return l;
     }
     private void backTrack(List<String> res ,int n , int count1,int count0,StringBuilder sb){
-        if(count1>=count0 && n==0){
+        //myVersion
+//        if(count1>=count0 && n==0){
+//            String s = sb.toString();
+//            res.add(s);
+//            return;
+//        }
+//        if(n>0){
+//        sb.append("1");
+//        backTrack(res,n-1,count1+1,count0,sb);
+//        sb.deleteCharAt(sb.length()-1);
+//        sb.append("0");
+//        backTrack(res,n-1,count1,count0+1,sb);
+//        sb.deleteCharAt(sb.length()-1);
+//        }
+
+//Optimized version
+        if(n==0){
             String s = sb.toString();
             res.add(s);
             return;
         }
-        if(n>0){
-        sb.append("1");
-        backTrack(res,n-1,count1+1,count0,sb);
-        sb.deleteCharAt(sb.length()-1);
-        sb.append("0");
-        backTrack(res,n-1,count1,count0+1,sb);
-        sb.deleteCharAt(sb.length()-1);
-        }
+            sb.append("1");
+            backTrack(res,n-1,count1+1,count0,sb);
+            sb.deleteCharAt(sb.length()-1);
+            if(count1>count0){ // append only when count of 1's is greater than count of 0's
+                sb.append("0");
+                backTrack(res,n-1,count1,count0+1,sb);
+                sb.deleteCharAt(sb.length()-1);
+            }
+
     }
 }
 class BitTest{
